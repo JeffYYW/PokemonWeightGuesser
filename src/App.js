@@ -14,10 +14,49 @@ class Header extends Component {
 }
 
 class Pokecard extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      name: "poke state"
+    }
+  }
+
+  random = (min, max) => {
+    let num = Math.floor(Math.random() * (max - min)) + min;
+    return num;
+  }
+
+  componentDidMount() {
+
+    const randNum = this.random(0, 500)
+
+    const url = "https://pokeapi.co/api/v2/pokemon/" + randNum
+    axios({
+      method: 'GET',
+      url: url,
+      dataResponse: 'json'
+    }).then(results => {
+      // const pokeList = (results.data.results);
+      // console.log(pokeList)
+      // console.log(pokeList.length);
+
+
+      // const pokemon = results.data.results[randNum].name;
+
+      const pokemon = results.data.species.name
+      console.log(results.data.species.name)
+
+      this.setState({
+        name: pokemon
+      })
+    })
+  }
+
   render() {
     return (
       <div>
-        <p>Pokemon name: {this.props.name}</p>
+        <p>Pokemon name: {this.state.name}</p>
       </div>
     )
   }
@@ -28,26 +67,41 @@ class App extends Component {
     super()
 
     this.state = {
-      name: "phoenix"
+      name: ""
     }
   }
 
 
-  componentDidMount() {
-    const url = "https://pokeapi.co/api/v2/pokemon/?limit=10"
-    axios({
-      method: 'GET',
-      url: url,
-      dataResponse: 'json'
-    }).then(results=> {
-      console.log(results.data.results)
-      const pokemon = results.data.results[0].name;
-      console.log(pokemon)
-      this.setState({
-        name:pokemon
-      })
-    })
+  random = (min, max) => {
+    let num = Math.floor(Math.random() * (max - min)) + min;
+    return num;
   }
+
+  // componentDidMount() {
+
+  //   const randNum = this.random(0, 500)
+
+  //   const url = "https://pokeapi.co/api/v2/pokemon/" + randNum
+  //   axios({
+  //     method: 'GET',
+  //     url: url,
+  //     dataResponse: 'json'
+  //   }).then(results=> {
+  //     // const pokeList = (results.data.results);
+  //     // console.log(pokeList)
+  //     // console.log(pokeList.length);
+
+      
+  //     // const pokemon = results.data.results[randNum].name;
+      
+  //     const pokemon = results.data.species.name
+  //     console.log(results.data.species.name)
+      
+  //     this.setState({
+  //       name:pokemon
+  //     })
+  //   })
+  // }
 
 
   
@@ -55,8 +109,10 @@ class App extends Component {
     
     return (
       <div className="App">
-        <Header name="snorlax" />
-        <Pokecard name={this.state.name}/> 
+        <Header />
+        <Pokecard /> 
+        <Pokecard /> 
+        <Pokecard /> 
         
     </div>
     );
