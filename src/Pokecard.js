@@ -38,6 +38,7 @@ class Pokecard extends Component {
 
             this.props.getWeight(pokeWeight)
             this.props.getId(pokeId)
+            
 
             this.setState({
                 name: pokemon,
@@ -50,7 +51,7 @@ class Pokecard extends Component {
 
     render() {
         return (
-            <div class="pokeCard">
+            <div className="pokeCard" onClick={() => {this.props.click(this.state.weight)}}>
                 <p>Pokemon name: {this.state.name}</p>
                 <img src={this.state.sprite} alt={this.state.name} />
                 <p>Weight: {this.state.weight}</p>

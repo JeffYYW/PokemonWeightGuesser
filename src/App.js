@@ -14,11 +14,22 @@ class App extends Component {
     }
   }
  
+  handleClick = (weight) => {
+    const otherTwo = this.state.pokeWeightArray.filter((item) => 
+      item != weight
+    )
+    if (weight > otherTwo[0] && weight > otherTwo[1]) {
+      console.log('You win!');
+    } else {
+      console.log('You lose!');
+    }
+    
+  }
   
   getPokemonWeight = (weight) => {
     const newWeightsArray = [...this.state.pokeWeightArray]
     newWeightsArray.push(weight);
-    console.log(newWeightsArray);
+    // console.log("Pokemon weights", newWeightsArray);
 
     this.setState({
       pokeWeightArray: newWeightsArray 
@@ -28,7 +39,7 @@ class App extends Component {
   getPokemonId = (id) => {
     const newIdArray = [...this.state.pokeIdArray]
     newIdArray.push(id);
-    console.log(newIdArray);
+    // console.log("Pokemon Ids", newIdArray);
 
     this.setState({
       pokeIdArray: newIdArray
@@ -41,9 +52,21 @@ class App extends Component {
       <div className="App">
         <Header />
         <div className="pokeCards">
-          <Pokecard getWeight={this.getPokemonWeight} getId={this.getPokemonId}/>
-          <Pokecard getWeight={this.getPokemonWeight} getId={this.getPokemonId}/>
-          <Pokecard getWeight={this.getPokemonWeight} getId={this.getPokemonId}/> 
+          <Pokecard 
+            getWeight={this.getPokemonWeight} 
+            getId={this.getPokemonId}
+            click={this.handleClick}
+          />
+          <Pokecard 
+            getWeight={this.getPokemonWeight} 
+            getId={this.getPokemonId}
+            click={this.handleClick}
+          />
+          <Pokecard 
+            getWeight={this.getPokemonWeight} 
+            getId={this.getPokemonId}
+            click={this.handleClick}
+          /> 
         </div>
     </div>
     );
