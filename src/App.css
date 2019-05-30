@@ -23,6 +23,22 @@
   color: #61dafb;
 }
 
+.pokeCards {
+  border: 2px solid blue;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pokeCard {
+  width: 32%;
+  border: 2px solid red;
+}
+
+img {
+  border: 2px solid coral;
+  width: 50%;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
