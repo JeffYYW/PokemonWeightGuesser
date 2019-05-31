@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 // import axios from 'axios';
 import Header from './Header.js'
 import Pokecard from './Pokecard.js'
+import EndMessage from './EndMessage.js'
 import './App.css';
 
 class App extends Component {
@@ -10,22 +11,35 @@ class App extends Component {
 
     this.state = {
       pokeWeightArray: [],
-      pokeIdArray: []
+      pokeIdArray: [],
+      message: ""
     }
+
   }
- 
+
   handleClick = (weight) => {
+
     const otherTwo = this.state.pokeWeightArray.filter((item) => 
-      item != weight
+      item !== weight
     )
-    if (weight > otherTwo[0] && weight > otherTwo[1]) {
-      console.log('You win!');
+    if (weight >= otherTwo[0] && weight > otherTwo[1]) {
+      // console.log('You win!');
+      this.setState({
+        message: "That's correct!"
+      })
     } else {
-      console.log('You lose!');
+      // console.log('You lose!');
+      this.setState({
+        message: "Sorry, better luck next time!"
+      })
     }
-    
   }
   
+// duplicate weights  
+// change random numbers in each pokecard  
+// refresh game when it has ended  
+// display weight on game end. How to render <p> tag?
+
   getPokemonWeight = (weight) => {
     const newWeightsArray = [...this.state.pokeWeightArray]
     newWeightsArray.push(weight);
@@ -68,6 +82,10 @@ class App extends Component {
             click={this.handleClick}
           /> 
         </div>
+
+        <EndMessage message={this.state.message}/>
+
+
     </div>
     );
   }

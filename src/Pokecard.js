@@ -39,7 +39,6 @@ class Pokecard extends Component {
             this.props.getWeight(pokeWeight)
             this.props.getId(pokeId)
             
-
             this.setState({
                 name: pokemon,
                 sprite: pokeImg,
