@@ -9,6 +9,7 @@ class Pokecard extends Component {
             name: "",
             sprite: "",
             id: 0,
+            clearClick: "divDisabled",
             weight: ""
         }
     }
@@ -20,7 +21,7 @@ class Pokecard extends Component {
 
     componentDidMount() {
 
-        const randNum = this.random(0, 500)
+        const randNum = this.random(0, 900)
 
         const url = "https://pokeapi.co/api/v2/pokemon/" + randNum
         
@@ -34,10 +35,7 @@ class Pokecard extends Component {
             const pokeWeight = results.data.weight;
             const pokeId = results.data.id;
 
-            // console.log(results.data)
-
             this.props.getWeight(pokeWeight)
-            this.props.getId(pokeId)
             
             this.setState({
                 name: pokemon,
@@ -49,15 +47,19 @@ class Pokecard extends Component {
     }
 
     render() {
+        let disabledClick;
+        if (this.props.displayWeight === true) {
+            disabledClick = this.state.clearClick
+        }
         return (
-            <div tabindex='0' className="pokeCard" onClick={() => {this.props.click(this.state.weight)}}>
+            <div 
+                tabindex="0"
+                className={"pokeCard " + disabledClick}  
+                onClick={() => {this.props.click(this.state.weight)}}
+            >
                 <p>Pokemon name: {this.state.name}</p>
                 <img src={this.state.sprite} alt={this.state.name} />
-                {console.log(this.props.displayWeight)}
-                {this.props.displayWeight ? null : (
-                    <p className="weightDisplay">Weight: {this.state.weight}</p>
-                )}
-                
+                {this.props.displayWeight ? <p className="weightDisplay">Weight: {this.state.weight}</p> : null}
             </div>
         )
     }

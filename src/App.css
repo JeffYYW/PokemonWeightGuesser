@@ -29,9 +29,14 @@
   justify-content: space-between;
 }
 
+.divDisabled {
+  pointer-events: none;
+}
+
 .pokeCard {
   width: 32%;
-  /* border: 2px solid red; */
+  border: 2px solid red;
+  
 }
 
 img {
