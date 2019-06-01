@@ -5,36 +5,54 @@ import Pokecard from './Pokecard.js'
 import EndMessage from './EndMessage.js'
 import './App.css';
 
+class RenderButton extends Component {
+  render(){
+    return (
+      <button onClick={() => {window.location.reload()}}>Try Again</button>
+    )
+  }
+}
+
 class App extends Component {
+  
   constructor() {
     super()
-
+  
     this.state = {
       pokeWeightArray: [],
       pokeIdArray: [],
-      message: ""
+      message: "",
+      display: true
     }
-
+    
   }
-
+  
   handleClick = (weight) => {
-
+    
     const otherTwo = this.state.pokeWeightArray.filter((item) => 
       item !== weight
     )
-    if (weight >= otherTwo[0] && weight > otherTwo[1]) {
+    if (weight >= otherTwo[0] && weight >= otherTwo[1]) {
       // console.log('You win!');
       this.setState({
-        message: "That's correct!"
+        message: "That's correct!",
+        display: false
       })
+      // setTimeout(() => {
+      //   window.location.reload()
+      // }, 3000);
     } else {
       // console.log('You lose!');
       this.setState({
-        message: "Sorry, better luck next time!"
+        message: "Sorry, better luck next time!",
+        display: false
       })
+      // setTimeout(() => {
+      //   window.location.reload()
+      // }, 3000);
     }
   }
-  
+
 // duplicate weights  
 // change random numbers in each pokecard  
 // refresh game when it has ended  
@@ -44,10 +62,11 @@ class App extends Component {
     const newWeightsArray = [...this.state.pokeWeightArray]
     newWeightsArray.push(weight);
     // console.log("Pokemon weights", newWeightsArray);
-
+    
     this.setState({
       pokeWeightArray: newWeightsArray 
     })
+    console.log(this.state.pokeWeightArray)
   }
 
   getPokemonId = (id) => {
@@ -66,26 +85,28 @@ class App extends Component {
       <div className="App">
         <Header />
         <div className="pokeCards">
+            <Pokecard 
+              getWeight={this.getPokemonWeight} 
+              getId={this.getPokemonId}
+              click={this.handleClick}
+              displayWeight={this.state.display}
+            />
           <Pokecard 
             getWeight={this.getPokemonWeight} 
             getId={this.getPokemonId}
             click={this.handleClick}
+            displayWeight={this.state.display}
           />
           <Pokecard 
             getWeight={this.getPokemonWeight} 
             getId={this.getPokemonId}
             click={this.handleClick}
-          />
-          <Pokecard 
-            getWeight={this.getPokemonWeight} 
-            getId={this.getPokemonId}
-            click={this.handleClick}
+            displayWeight={this.state.display}
           /> 
         </div>
 
         <EndMessage message={this.state.message}/>
-
-
+        <RenderButton />
     </div>
     );
   }

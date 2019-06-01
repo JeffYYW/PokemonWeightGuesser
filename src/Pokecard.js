@@ -50,10 +50,14 @@ class Pokecard extends Component {
 
     render() {
         return (
-            <div className="pokeCard" onClick={() => {this.props.click(this.state.weight)}}>
+            <div tabindex='0' className="pokeCard" onClick={() => {this.props.click(this.state.weight)}}>
                 <p>Pokemon name: {this.state.name}</p>
                 <img src={this.state.sprite} alt={this.state.name} />
-                <p>Weight: {this.state.weight}</p>
+                {console.log(this.props.displayWeight)}
+                {this.props.displayWeight ? null : (
+                    <p className="weightDisplay">Weight: {this.state.weight}</p>
+                )}
+                
             </div>
         )
     }
