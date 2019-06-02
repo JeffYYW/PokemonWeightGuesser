@@ -47,11 +47,13 @@ class Pokecard extends Component {
                 id: pokeId,
                 weight: pokeWeight
             })
+        }).catch(error => {
+            console.log(`couldn't load pokemon`)
         })
     }
 
     handleKeyPress = (event) => {
-        if (event.key == 'Enter') {
+        if (event.key === 'Enter') {
             this.props.click(this.state.weight)
         }
     }

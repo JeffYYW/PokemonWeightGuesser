@@ -4,7 +4,7 @@ import Pokecard from './Pokecard.js'
 import EndMessage from './EndMessage.js'
 import RenderButton from './RenderButton.js'
 import './App.css';
-import oak from './assets/profOak.png'
+import favicon from './assets/favicon.png'
 
 class App extends Component {
   
@@ -73,10 +73,6 @@ class App extends Component {
         </div>
         <EndMessage message={this.state.message}/>
         {this.state.display ? <RenderButton /> : null}
-
-        {/* <div className="professor">
-          <img src={oak} alt="Professor Oak"/>
-        </div> */}
     </div>
     );
   }
