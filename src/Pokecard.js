@@ -19,6 +19,10 @@ class Pokecard extends Component {
         return num;
     }
 
+    capitalizeFirstLetter = (string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
     componentDidMount() {
 
         const randNum = this.random(0, 900)
@@ -30,9 +34,9 @@ class Pokecard extends Component {
             url: url,
             dataResponse: 'json'
         }).then(results => {
-            const pokemon = results.data.species.name
+            const pokemon = this.capitalizeFirstLetter(results.data.species.name)
             const pokeImg = results.data.sprites.front_default;
-            const pokeWeight = results.data.weight;
+            const pokeWeight = (results.data.weight / 10);
             const pokeId = results.data.id;
 
             this.props.getWeight(pokeWeight)
@@ -46,23 +50,34 @@ class Pokecard extends Component {
         })
     }
 
+    handleKeyPress = (event) => {
+        if (event.key == 'Enter') {
+            this.props.click(this.state.weight)
+        }
+    }
+
     render() {
         let disabledClick;
         if (this.props.displayWeight === true) {
-            disabledClick = this.state.clearClick
+            disabledClick = this.state.clearClick;
         }
+
         return (
             <div 
-                tabindex="0"
+                tabindex={this.props.tabNumber}
                 className={"pokeCard " + disabledClick}  
                 onClick={() => {this.props.click(this.state.weight)}}
+                onKeyPress={this.handleKeyPress}
             >
-                <p>Pokemon name: {this.state.name}</p>
+                <h3>{this.state.name}</h3>
                 <img src={this.state.sprite} alt={this.state.name} />
-                {this.props.displayWeight ? <p className="weightDisplay">Weight: {this.state.weight}</p> : null}
+                {this.props.displayWeight ? <p className="weightDisplay">Weight: {this.state.weight} kg</p> : null}
             </div>
         )
     }
 }
 
 export default Pokecard
+
+    // References
+// https://stackoverflow.com/questions/1026069/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript

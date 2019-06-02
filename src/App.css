@@ -1,4 +1,18 @@
+html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
+
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+* { outline: none !important; }
+
+h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+
 .App {
+  max-width: 1600px;
   text-align: center;
 }
 
@@ -23,10 +37,47 @@
   color: #61dafb;
 }
 
+/* #root {
+  background-color: #202a45;
+} */
+
+.App {
+  width: 100%;
+  height: 100vh;
+  /* border: 2px solid pink; */
+  /* background-image: url("assets/pokeWallpaper.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;    */
+
+  background-color: #378796;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='50' height='25' viewBox='0 0 50 25'%3E%3Cdefs%3E%3Crect stroke='%23378796' stroke-width='0.1' width='1' height='1' id='s'/%3E%3Cpattern id='a' width='2' height='2' patternUnits='userSpaceOnUse'%3E%3Cg stroke='%23378796' stroke-width='0.1'%3E%3Crect fill='%233b8998' width='1' height='1'/%3E%3Crect fill='%23378796' width='1' height='1' x='1' y='1'/%3E%3Crect fill='%233f8c9a' width='1' height='1' y='1'/%3E%3Crect fill='%23438e9c' width='1' height='1' x='1'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='b' width='5' height='11' patternUnits='userSpaceOnUse'%3E%3Cg fill='%2347919e'%3E%3Cuse xlink:href='%23s' x='2' y='0'/%3E%3Cuse xlink:href='%23s' x='4' y='1'/%3E%3Cuse xlink:href='%23s' x='1' y='2'/%3E%3Cuse xlink:href='%23s' x='2' y='4'/%3E%3Cuse xlink:href='%23s' x='4' y='6'/%3E%3Cuse xlink:href='%23s' x='0' y='8'/%3E%3Cuse xlink:href='%23s' x='3' y='9'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='c' width='7' height='7' patternUnits='userSpaceOnUse'%3E%3Cg fill='%234b93a1'%3E%3Cuse xlink:href='%23s' x='1' y='1'/%3E%3Cuse xlink:href='%23s' x='3' y='4'/%3E%3Cuse xlink:href='%23s' x='5' y='6'/%3E%3Cuse xlink:href='%23s' x='0' y='3'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='d' width='11' height='5' patternUnits='userSpaceOnUse'%3E%3Cg fill='%23378796'%3E%3Cuse xlink:href='%23s' x='1' y='1'/%3E%3Cuse xlink:href='%23s' x='6' y='3'/%3E%3Cuse xlink:href='%23s' x='8' y='2'/%3E%3Cuse xlink:href='%23s' x='3' y='0'/%3E%3Cuse xlink:href='%23s' x='0' y='3'/%3E%3C/g%3E%3Cg fill='%234f95a3'%3E%3Cuse xlink:href='%23s' x='8' y='3'/%3E%3Cuse xlink:href='%23s' x='4' y='2'/%3E%3Cuse xlink:href='%23s' x='5' y='4'/%3E%3Cuse xlink:href='%23s' x='10' y='0'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='e' width='47' height='23' patternUnits='userSpaceOnUse'%3E%3Cg fill='%23161e29'%3E%3Cuse xlink:href='%23s' x='2' y='5'/%3E%3Cuse xlink:href='%23s' x='23' y='13'/%3E%3Cuse xlink:href='%23s' x='4' y='18'/%3E%3Cuse xlink:href='%23s' x='35' y='9'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='f' width='61' height='31' patternUnits='userSpaceOnUse'%3E%3Cg fill='%23161e29'%3E%3Cuse xlink:href='%23s' x='16' y='0'/%3E%3Cuse xlink:href='%23s' x='13' y='22'/%3E%3Cuse xlink:href='%23s' x='44' y='15'/%3E%3Cuse xlink:href='%23s' x='12' y='11'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23a)' width='50' height='25'/%3E%3Crect fill='url(%23b)' width='50' height='25'/%3E%3Crect fill='url(%23c)' width='50' height='25'/%3E%3Crect fill='url(%23d)' width='50' height='25'/%3E%3Crect fill='url(%23e)' width='50' height='25'/%3E%3Crect fill='url(%23f)' width='50' height='25'/%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
+  font-family: 'Lato', sans-serif;
+}
+
+header {
+  /* background-image: url("assets/pokeWallpaper.jpg"); */
+  border: 2px solid red;
+  padding: 4% 0;
+}
+
+header h1 {
+  font-family: 'Abril Fatface', cursive;
+  margin-bottom: 2%;
+}
+
+img {
+  /* border: 2px solid coral; */
+  width: 50%;
+}
+
 .pokeCards {
-  /* border: 2px solid blue; */
+  border: 2px solid blue;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  padding: 3% 0;
 }
 
 .divDisabled {
@@ -34,15 +85,45 @@
 }
 
 .pokeCard {
-  width: 32%;
-  border: 2px solid red;
-  
+  width: 25%;
+  /* border: 2px solid red; */
+  background-color: #29738F;
+  border-radius: 5%;
+  box-shadow: 5px 5px 10px black;
 }
 
-img {
-  border: 2px solid coral;
-  width: 50%;
+.pokeCard:hover,
+.pokeCard:focus {
+  background-color: rgba(250, 250, 250, 0.5);
 }
+
+.pokeCard:active {
+  transform: translateX(3px) translateY(3px);
+}
+
+.endMessage {
+  border: 2px solid red;
+  padding: 3% 0;
+}
+
+.resetButton {
+  border: 2px outset white;
+  padding: 15px 30px;
+  font-family: 'Lato', sans-serif;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px black;
+}
+
+.resetButton:hover,
+.resetButton:focus {
+  background-color: rgba(250, 100, 50, 0.5);
+}
+
+.resetButton:active {
+  transform: translateX(3px) translateY(3px);
+}
+
+
 
 @keyframes App-logo-spin {
   from {

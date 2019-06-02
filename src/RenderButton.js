@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
 class RenderButton extends Component {
+    
     render() {
         return (
-            <button onClick={() => { window.location.reload() }}>Try Again</button>
+            <button className="resetButton" onClick={() => { window.location.reload() }}>Try Again</button>
+            
         )
     }
 }
