@@ -4,7 +4,7 @@ class RenderButton extends Component {
     
     render() {
         return (
-            <button className="resetButton" onClick={() => { window.location.reload() }}>Try Again</button>
+            <button className="resetButton" onClick={() => { window.location.reload() }}>Play Again</button>
             
         )
     }
