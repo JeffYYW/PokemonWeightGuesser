@@ -23,6 +23,7 @@ class App extends Component {
     const otherTwo = this.state.pokeWeightArray.filter((item) => 
       item !== weight
     )
+    console.log(otherTwo);
     if (weight >= otherTwo[0] && weight >= otherTwo[1]) {
       this.setState({
         message: "That's correct! Great guess!",

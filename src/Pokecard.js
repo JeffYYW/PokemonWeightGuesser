@@ -49,10 +49,13 @@ class Pokecard extends Component {
                 weight: pokeWeight
             })
         }).catch(error => {
+
+            this.props.getWeight(10)
+
             this.setState({
                 name: "MissingNo.",
                 sprite: MissingNo,
-                weight: "10"
+                weight: 10
             })
         })
     }
