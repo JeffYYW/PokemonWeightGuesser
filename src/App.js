@@ -4,7 +4,7 @@ import Pokecard from './Pokecard.js'
 import EndMessage from './EndMessage.js'
 import RenderButton from './RenderButton.js'
 import './App.css';
-import favicon from './assets/favicon.png'
+
 
 class App extends Component {
   
