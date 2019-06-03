@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
+import MissingNo from './assets/Missingno.png'
 
 class Pokecard extends Component {
     constructor() {
@@ -48,7 +49,11 @@ class Pokecard extends Component {
                 weight: pokeWeight
             })
         }).catch(error => {
-            console.log(`couldn't load pokemon`)
+            this.setState({
+                name: "MissingNo.",
+                sprite: MissingNo,
+                weight: "10"
+            })
         })
     }
 
