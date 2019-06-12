@@ -26,7 +26,7 @@ class Pokecard extends Component {
 
     componentDidMount() {
 
-        const randNum = this.random(0, 900)
+        const randNum = this.random(0, 807)
 
         const url = "https://pokeapi.co/api/v2/pokemon/" + randNum
         
