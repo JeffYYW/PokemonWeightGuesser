@@ -181,6 +181,7 @@ header p {
 
   .pokeCards {
     height: 90vh;
+    justify-content: space-evenly;
   }
 
   .pokeCard {
