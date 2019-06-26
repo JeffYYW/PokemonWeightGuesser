@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/jeffreyYeungProjectFive/static/css/main.8234d79c.chunk.css",
-    "main.js": "/jeffreyYeungProjectFive/static/js/main.8a447b8a.chunk.js",
-    "main.js.map": "/jeffreyYeungProjectFive/static/js/main.8a447b8a.chunk.js.map",
-    "runtime~main.js": "/jeffreyYeungProjectFive/static/js/runtime~main.7c008785.js",
-    "runtime~main.js.map": "/jeffreyYeungProjectFive/static/js/runtime~main.7c008785.js.map",
-    "static/js/2.af287f3f.chunk.js": "/jeffreyYeungProjectFive/static/js/2.af287f3f.chunk.js",
-    "static/js/2.af287f3f.chunk.js.map": "/jeffreyYeungProjectFive/static/js/2.af287f3f.chunk.js.map",
-    "index.html": "/jeffreyYeungProjectFive/index.html",
-    "precache-manifest.ca8c6d93a305e900b7b59ddd5bf60f56.js": "/jeffreyYeungProjectFive/precache-manifest.ca8c6d93a305e900b7b59ddd5bf60f56.js",
-    "service-worker.js": "/jeffreyYeungProjectFive/service-worker.js",
-    "static/css/main.8234d79c.chunk.css.map": "/jeffreyYeungProjectFive/static/css/main.8234d79c.chunk.css.map"
+    "main.css": "/PokemonWeightGuesser/static/css/main.6c660110.chunk.css",
+    "main.js": "/PokemonWeightGuesser/static/js/main.15c6fd88.chunk.js",
+    "main.js.map": "/PokemonWeightGuesser/static/js/main.15c6fd88.chunk.js.map",
+    "runtime~main.js": "/PokemonWeightGuesser/static/js/runtime~main.c9eea272.js",
+    "runtime~main.js.map": "/PokemonWeightGuesser/static/js/runtime~main.c9eea272.js.map",
+    "static/js/2.af287f3f.chunk.js": "/PokemonWeightGuesser/static/js/2.af287f3f.chunk.js",
+    "static/js/2.af287f3f.chunk.js.map": "/PokemonWeightGuesser/static/js/2.af287f3f.chunk.js.map",
+    "index.html": "/PokemonWeightGuesser/index.html",
+    "precache-manifest.a77d226bf22a2daf0b4eaaa93c5a0839.js": "/PokemonWeightGuesser/precache-manifest.a77d226bf22a2daf0b4eaaa93c5a0839.js",
+    "service-worker.js": "/PokemonWeightGuesser/service-worker.js",
+    "static/css/main.6c660110.chunk.css.map": "/PokemonWeightGuesser/static/css/main.6c660110.chunk.css.map"
   }
 }
