@@ -1,7 +1,7 @@
 {
   "name": "jeffrey-yeung-project-five",
   "version": "0.1.0",
-  "homepage": "https://jeffyyw.github.io/jeffreyYeungProjectFive/",
+  "homepage": "https://jeffyyw.github.io/PokemonWeightGuesser/",
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
