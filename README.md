@@ -1,3 +1,7 @@
+# Pokemon Weight Guesser
+
+Pokemon Weight Guessing game created with React using the Pokemon API. Fully responsive and accessible.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
